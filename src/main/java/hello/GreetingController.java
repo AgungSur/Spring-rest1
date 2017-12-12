@@ -38,6 +38,14 @@ public class GreetingController {
 		
 	}
 	
+	@RequestMapping("/film")
+	public List<Film> allFilms(){
+		return em.createEntityManager()
+				.createQuery("form Films")
+				.getResultList();
+		
+	}
+	
 	@RequestMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 	 return x;
